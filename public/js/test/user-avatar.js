@@ -1,0 +1,4 @@
+/*! Tomcat360.com (c) 2015 
+	Author: Renzhao
+*/
+define("test/user-avatar",[],function(t){"use strict";!function(){function t(t){var e=new FileReader;e.onload=function(t){var e=$("<img>").attr("src",t.target.result);$("#imgCom").empty().append(e)},e.readAsDataURL(t)}$("#img-btn").click(function(){$("[type=file]").trigger("click")}),$("[type=file]").change(function(e){var a=e.target.files[0],i=$(this).val(),n=/\.(png|jpg|gif|bmp)$/;n.test(i)?t(a):alert("选择正确格式的图片")})}(),function(){var t=$("#avatar-preview"),e=$("#choosen-btn"),a=$("#localfile");$("#avatar-form");e.click(function(){a.trigger("click")}),a.change(function(){var e=a.val();e=e.substr(12),console.log(e,e.length),e=ROOT_URL+"public/images/"+e,t.attr("src",e),e.trim().length||alert("请选择一张图片")})}()});
