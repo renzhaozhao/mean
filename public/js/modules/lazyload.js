@@ -1,4 +1,0 @@
-/*! Tomcat360.com (c) 2015 
-	Author: Renzhao
-*/
-define("modules/lazyload",["jQuery","log"],function(n,o,i){var e=n("jQuery"),r=n("log"),t=r.log,l=r.error;if("undefined"==typeof e||"undefined"==typeof e.fn||"string"!=typeof e.fn.jquery)return void l("Can not find jQuery.");r.$(),t("Module lazyload is loading...");var a=function(n){var o=n[0].getBoundingClientRect().top,i=e(window).height();o>=0&&i>=o&&(n.attr("src",n.attr("original")),n.removeAttr("original"))};i.exports=function(){e("img[original]"),e(window).on("scroll",function(){e("img[original]").each(function(n,o){a(e(o))})}),e("img[original]").each(function(n,o){a(e(o))})},t("Module lazyload is loaded.")});

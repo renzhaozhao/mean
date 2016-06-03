@@ -1,26 +1,14 @@
 var package = require("../package.json");
 
-var config = {
-    projectName: "JUI",
+module.exports = {
+    projectName: "RUI",
     projectPath: "./src/",
     releasePath: "./public/",
     lessSource: "/less/",
     jsSource: "/js/",
 
     settings: {
-        /** 每个文件输出的 banner */
-        banner: {
-            title: package.title,
-            version: package.version
-        },
-
-        /** less */
-        less: {
-
-        },
-
-        /** autoprefixer */
-        autoprefixer: {
+        prefix: {
             browsers: [
                 "last 2 version",
                 "> 1%",
@@ -32,26 +20,23 @@ var config = {
                 "android 4"
             ]
         },
-
-        /** minify-css */
-        minfiy: {
-        },
-
-        /** rename */
         rename: {
-            css: { extname: ".css" },
-            minCss: { extname: ".min.css" },
-            js: { extname: '.js' }
+            css: {
+                extname: ".css"
+            },
+            minCss: {
+                extname: ".min.css"
+            },
+            js: {
+                extname: '.js'
+            }
         },
 
-        /** plumber */
         plumber: {
-            errorHandler: function(err){
+            errorHandler: function(err) {
                 console.log(err.toString());
                 this.emit("end");
             }
         }
     }
-};
-
-module.exports = config;
+}

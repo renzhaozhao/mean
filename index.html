@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+<title>mean搭建</title>
+<link rel="stylesheet" href="public/css/style.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>主页</h2>
+    <a href="#page1">页面1</a>
+    <a href="#page2">页面2</a>
+
+    <div ng-view></div>
+</div>
+
+
+
+<script src="public/lib/angular/angular.js"></script>
+<script src="public/lib/angular-route/angular-route.js"></script>
+<!-- <script src="js/main.min.js"></script> -->
+<script src="src/js/app.js"></script>
+<script src="src/js/services.js"></script>
+<script src="src/js/controller.js"></script>
+<script src="src/js/filters.js"></script>
+
+</body>
+</html>

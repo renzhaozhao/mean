@@ -1,35 +1,41 @@
 @import "config.less";
 
+
 .pure-table{
     width: 100%;
-    color: @font-color;
     border: none;
-    font-size: 12px;
 
     & > thead{
-        color: darken(@font-color, 10%);
-        background-color: @el-border-color;
+        background-color: @green;
 
-        th{
-            border-left-width: 0;
-            text-align: center;
+        tr{
+            th{
+                font-size: 16px;
+                color: @white;
+                font-weight: normal;
+                padding: 1em;
+
+                img{
+                    float: right;
+                    margin-top: 4px;
+                }
+            }
         }
     }
 
     & > tbody{
+        background-color: rgba(255, 255, 255, 0.1);
+
         tr{
-            border-bottom: 1px solid @el-border-color;
-
-            &:last-child{
-                border-bottom-width: 0;
+            &:nth-child(2n){
+                background-color: rgba(255, 255, 255, 0.1);
             }
-
             td{
-                border-left-width: 0;
-                padding: 1em;
-                text-align: center;
-                &:first-child{
-                   /*  width: 8em; */
+                color: @white;
+                padding: .5em 1em;
+
+                a{
+                    color: @white;
                 }
             }
         }

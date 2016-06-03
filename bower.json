@@ -1,0 +1,9 @@
+{
+  "name": "bower",
+  "private": "true",
+  "devDependencies": {},
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.6"
+  }
+}
