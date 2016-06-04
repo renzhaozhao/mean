@@ -3,11 +3,22 @@
 angular.module('app.controller', [])
 
 .controller('Page1Ctrl', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
-    $http.get('http://localhost:3000/test').success(function(data) {
-        console.log(data);
-    })
+	var url = 'http://localhost:3000/news';
+	$scope.add = function() {
+		$http.post(url, $scope.news).success(function(data) {
+			if (data.status == 'successful') {
+				$scope.news.title = '';
+				$scope.news.content = '';
+				alert('发表成功');
+			}
+		})
+	}
 }])
 
 .controller('Page2Ctrl', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
-    console.log('page2');
+	var url = 'http://localhost:3000/news';
+	$http.get(url).success(function(data) {
+		console.log(data);
+		$scope.list = data;
+	})
 }])

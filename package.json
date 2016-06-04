@@ -11,6 +11,7 @@
   "author": "renzhao",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.1",
     "express": "~4.13.1",
     "mongoose": "^4.4.19",
     "serve-favicon": "~2.3.0"

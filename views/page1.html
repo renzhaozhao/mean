@@ -1,1 +1,17 @@
 <h3>page1</h3>
+
+<form class="pure-form pure-form-aligned" ng-submit="add()">
+    <fieldset>
+        <div class="pure-control-group">
+            <label>标题</label>
+            <input type="text" ng-model="news.title">
+        </div>
+        <div class="pure-control-group">
+            <label>正文</label>
+            <textarea name="name" rows="8" cols="40" ng-model="news.content"></textarea>
+        </div>
+        <div class="pure-control-group">
+            <button type="submit" name="button" class="pure-button">发布</button>
+        </div>
+    </fieldset>
+</form>
