@@ -15,17 +15,6 @@ app.use(favicon(path.join(__dirname, 'favicon.ico')));
 app.use(bodyParser.json());
 
 routes(app);
-app.post('/news', function(req, res, next) {
-	var news = new NewsModel(req.body);
-	news.save(function(err) {
-		if (err) {
-			return next(err);
-		}
-		return res.json({
-			status: 'successful'
-		});
-	});
-})
 
 app.use(function(req, res, next) {
 	res.status(404);
@@ -53,7 +42,7 @@ app.use(function(err, req, res, next) {
 
 app.set('port', process.env.PORT || config.port);
 var server = app.listen(app.get('port'), function() {
-	console.log("start in " + app.get('port'));
+	console.log("mean start in " + app.get('port'));
 });
 
 module.exports = app;
