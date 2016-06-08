@@ -33,4 +33,7 @@ angular.module('app', [
     .otherwise({
         redirectTo: '/page1'
     });
-}])
+}]);
+
+
+var server = 'http://23.83.233.202:3000/'
