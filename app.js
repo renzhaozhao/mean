@@ -1,6 +1,7 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var logger = require('morgan');
 var favicon = require('serve-favicon');
 var mongoose = require('mongoose');
 
@@ -10,9 +11,13 @@ var db = require('./config/db.js')();
 var routes = require('./app/routes/routes.news.js');
 
 var app = express();
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
 app.use(express.static(path.join(__dirname)));
 app.use(favicon(path.join(__dirname, 'favicon.ico')));
-app.use(bodyParser.json());
 
 routes(app);
 
