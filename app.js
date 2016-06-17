@@ -14,40 +14,42 @@ var app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-	extended: false
+    extended: false
 }));
 app.use(express.static(path.join(__dirname)));
 app.use(favicon(path.join(__dirname, 'favicon.ico')));
 
 routes(app);
 
+//处理404
 app.use(function(req, res, next) {
-	res.status(404);
-	try {
-		return res.json('Not Found');
-	}
-	catch (e) {
-		console.error('404 set header after sent');
-	}
+    res.status(404);
+    try {
+        return res.json('Not Found');
+    }
+    catch (e) {
+        console.error('404 set header after sent');
+    }
 })
 
+//处理错误
 app.use(function(err, req, res, next) {
-	if (!err) {
-		return next();
-	};
-	try {
-		return res.json(err.message || 'server error');
-	}
-	catch (e) {
-		console.error('500 set header after sent');
-	}
-	res.status(500);
+    if (!err) {
+        return next();
+    };
+    try {
+        return res.json(err.message || 'server error');
+    }
+    catch (e) {
+        console.error('500 set header after sent');
+    }
+    res.status(500);
 
 })
 
 app.set('port', process.env.PORT || config.port);
 var server = app.listen(app.get('port'), function() {
-	console.log("mean start in " + app.get('port'));
+    console.log("mean start in " + app.get('port'));
 });
 
 module.exports = app;
