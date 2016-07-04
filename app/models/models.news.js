@@ -1,11 +1,15 @@
 var mongoose = require('mongoose');
 
 var NewsSchema = new mongoose.Schema({
-    title: String,
-    content: String,
+    title: {
+        type: String
+    },
+    content: {
+        type: String
+    },
     createTime: {
         type: Date,
-        dafault: Date.now
+        default: Date.now
     }
 })
 
